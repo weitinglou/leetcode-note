@@ -8,8 +8,8 @@ Topic
 <h2 id="pymodule">Python module</h2>
 <h3 id="collections">collections</h3>
 
-collections.Counter
-可以用來做String每個letter出現次數的記數
+1. collections.Counter
+   可以用來做String每個letter出現次數的記數
 
 相關題型
 
@@ -28,10 +28,13 @@ count = [e,3],[l,1][m,1][n,1][t,1]
 class Solution(object):
     def firstUniqChar(self, s):
         """
-        :type s: str
+        :type s: str    eg, element
         :rtype: int
         """
-        count = collections.Counter(s)
+        count = collections.Counter(s) 
+        #count會變成hash array並且value會是每個character出現次數 
+        #count = [e,3],[l,1][m,1][n,1][t,1]
+        
         for i in range(0, len(s)):
             if count[s[i]] == 1:
                 return i
@@ -54,12 +57,12 @@ class Solution(object):
  class Solution(object):
     def frequencySort(self, s):
         """
-        :type s: str
+        :type s: str    eg, tree
         :rtype: str
         """
         answer = ""
-        c = collections.Counter(s)
-        c_common = c.most_common()
+        c = collections.Counter(s)   # c = [t,1],[r,1],[e,2]
+        c_common = c.most_common()   # c_common = [e,2],[t,1],[r,1] 
         for letter,count in c_common:
             answer += letter*count
 
