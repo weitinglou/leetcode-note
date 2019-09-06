@@ -2,7 +2,7 @@
 
 Topic
 ================
-*   [Python module introduction](#pymodule)
+*   [Python module](#pymodule)
     *   [**Collections**](#collections)
 
 <h2 id="pymodule">Python module</h2>
