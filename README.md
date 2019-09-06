@@ -23,7 +23,7 @@ Topic
 ##### Solution
 這題可以使用collections.Counter將string element產生成hash array, 並且計算每個keys在string中出現的次數存成value,
 在string中只出現過一次的英文字母的counter value就會是1
-count = [e,3],[l,1][m,1][n,1][t,1]
+
 ```python
 class Solution(object):
     def firstUniqChar(self, s):
