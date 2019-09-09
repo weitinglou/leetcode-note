@@ -8,7 +8,7 @@ Topic
     *   [**Sort**](#sort)    
 *   [Math concept Related](#math)
     *   [**Sum**](#sum)
-
+---------------------------------------
 <h2 id="pymodule">Python module</h2>
 <h3 id="collections">collections</h3>
 
@@ -76,7 +76,7 @@ class Solution(object):
 
         return answer
   ```
-
+---------------------------------------
 <h2 id="pybuiltin">Python built-in Related</h2>
 <h3 id="sort">Sort</h3>
 
@@ -115,7 +115,7 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
                     cmp += 1
         return cmp
  ```
-
+---------------------------------------
 <h2 id="math">Math Concept Related</h2>
 <h3 id="sum">Sum</h3>
 
