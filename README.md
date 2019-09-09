@@ -2,8 +2,10 @@
 
 Topic
 ================
-*   [Python module](#pymodule)
+*   [Python module Related](#pymodule)
     *   [**Collections**](#collections)
+*   [Math concept Related](#math)
+    *   [**Sum**](#sum)
 
 <h2 id="pymodule">Python module</h2>
 <h3 id="collections">collections</h3>
@@ -68,3 +70,31 @@ class Solution(object):
 
         return answer
   ```
+
+<h2 id="math">Math Concept Related</h2>
+<h3 id="sum">Sum</h3>
+
+相關題型
+
+[268\. Missing Number]
+
+ [268\. Missing Number]: https://leetcode.com/problems/missing-number/
+##### Descrption
+這題要在給定的array中找到消失的數字,例如在array中[3,0,1] 消失的數字為2
+
+##### Solution
+這題沒有特殊的解法,可以純粹從數學的概念中解題,只要將預期中的array總和減去出現過的數字,就可以找到消失的數字
+在範例中預期的array總合為0+1+2+3=6, 減去3,0,1即可得到答案
+
+```python
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        total = (len(nums)*(len(nums)+1))/2
+        for i in nums:
+            total = total - i
+        return total
+```
