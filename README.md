@@ -43,7 +43,9 @@ class Solution(object):
         
         return -1
 ```
-
+其他只使用collections.Counter就可解的題型
+ [136\. Single Number]: https://leetcode.com/problems/single-number/
+ 
 [451\. Sort Characters By Frequency]
 
  [451\. Sort Characters By Frequency]: https://leetcode.com/problems/sort-characters-by-frequency/
