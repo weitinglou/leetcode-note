@@ -4,6 +4,8 @@ Topic
 ================
 *   [Python module Related](#pymodule)
     *   [**Collections**](#collections)
+*   [Python Built-in Related](#pybuiltin)
+    *   [**Sort**](#sort)    
 *   [Math concept Related](#math)
     *   [**Sum**](#sum)
 
@@ -47,7 +49,7 @@ class Solution(object):
 [136\. Single Number]
 
  [136\. Single Number]: https://leetcode.com/problems/single-number/
- 
+
 [451\. Sort Characters By Frequency]
 
  [451\. Sort Characters By Frequency]: https://leetcode.com/problems/sort-characters-by-frequency/
@@ -74,6 +76,45 @@ class Solution(object):
 
         return answer
   ```
+
+<h2 id="pybuiltin">Python built-in Related</h2>
+<h3 id="sort">Sort</h3>
+
+Sort and Sorted
+Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可以用來排序list
+差別在於sorted會回傳新的排序好的list,sort則會直接修改原本的list
+
+相關題型
+
+[41\. First Missing Positive]
+
+ [41\. First Missing Positive]: https://leetcode.com/problems/first-missing-positive/
+ ##### Descrption
+ 這題要在一個沒有排序過的list中,找到最小不存在在list中的正整數
+ 
+ ##### Solution
+ 這題可以先將list排序過後,再對list做操作就會簡單許多,其中必須注意題目中有提到uses constant extra space
+ 所以這題使用的是sorted built-in function.
+ 
+ ```python
+ class Solution(object):
+    def firstMissingPositive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        cmp = 1     #最小出現在list中的整數從1開始
+        sort_num = sorted(nums)
+        for i in range(0,len(sort_num)):
+            if sort_num[i] > 0:
+                if sort_num[i] == (cmp-1):
+                    cmp = cmp
+                elif sort_num[i] != cmp:
+                    return cmp
+                else:
+                    cmp += 1
+        return cmp
+ ```
 
 <h2 id="math">Math Concept Related</h2>
 <h3 id="sum">Sum</h3>
