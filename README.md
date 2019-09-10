@@ -120,6 +120,7 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
  <h3 id="dictget">Dict.get</h3>
  
  dict.get(key, default) 用在dictionary中,會返回指定key的value值,如果dictionary中沒有此key,則會返回default值
+ 
  eg, dict = {'Monday':1, 'Tuesday':2}
  dict.get('Monday',100) = 1
  dict.get('Wednesday',100) = 100
