@@ -14,7 +14,11 @@ Topic
 <h3 id="collections">collections</h3>
 
 1. collections.Counter
-   可以用來做String每個letter出現次數的記數
+   可以用來做String每個letter出現次數的記數,也可用來算list中每個數字出現次數
+   
+   eg, string "element"經過collections.Counter會產生的dictionary為{"e":3, "l":1, "m":1, "n":1, "t":1}
+   
+   list \[2,3,4,3,5,2\] 經過collections.Counter會產生dictionary{2:2, 3:2, 4:1, 5:1}
 
 相關題型
 
