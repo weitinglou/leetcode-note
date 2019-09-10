@@ -6,6 +6,7 @@ Topic
     *   [**Collections**](#collections)
 *   [Python Built-in Related](#pybuiltin)
     *   [**Sort**](#sort)    
+    *   [**Dict.get**](#dictget)
 *   [Math concept Related](#math)
     *   [**Sum**](#sum)
 ---------------------------------------
@@ -115,6 +116,56 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
                     cmp += 1
         return cmp
  ```
+ 
+ <h3 id="dictget">Dict.get</h3>
+ 
+ dict.get(key, default) 用在dictionary中,會返回指定key的value值,如果dictionary中沒有此key,則會返回default值
+ eg, dict = {'Monday':1, 'Tuesday':2}
+ dict.get('Monday',100) = 1
+ dict.get('Wednesday',100) = 100
+ 
+ 相關題型
+
+[350\. Intersection of Two Arrays II]
+
+ [350\. Intersection of Two Arrays II]: https://leetcode.com/problems/intersection-of-two-arrays-ii/
+ ##### Descrption
+ 給定兩個array,要求出他們的交集array
+ 
+ ##### Solution
+ 這題配合前面介紹的module [**Collections**](#collections).Counter來解題,並且判斷兩個list中哪個list的長度較長
+eg, nums1 = \[1,2,2,1\]
+    nums2 = \[2,2\]
+
+ ```python
+ class Solution(object):
+    def intersect(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        ans = []
+        return_v = 0
+        #collections.Counter會依據list中每個element出現的次數產生對應的dictionary
+        count1 = collections.Counter(nums1)    #count1 = {1:2,2:2}
+        count2 = collections.Counter(nums2)    #count2 = {2:2}
+        
+        if(len(nums1) > len(nums2)):    #判斷兩個list哪個長度較長,如果nums1較長則base取nums2來比
+            for i in nums2:             #從nums2中的element來找是否nums1有包含此element
+                return_v = count1.get(i,0)       #使用get來尋找count1中是否有key為i的element,如果有就會return非0的正數
+                if return_v != 0:                #如果return value不是0就代表count1中有包含i element
+                    ans.append(i)                #將此數append進answer中,並且將count1[i] -1
+                    count1[i] -=1
+        else:
+            for i in nums1:
+                return_v = count2.get(i,0)
+                if return_v != 0:
+                    ans.append(i)
+                    count2[i] -=1
+        return ans
+ ```
+ 
 ---------------------------------------
 <h2 id="math">Math Concept Related</h2>
 <h3 id="sum">Sum</h3>
