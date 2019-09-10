@@ -135,7 +135,8 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
  
  ##### Solution
  這題配合前面介紹的module [**Collections**](#collections).Counter來解題,並且判斷兩個list中哪個list的長度較長
-eg, nums1 = \[1,2,2,1\]
+ 
+ eg, nums1 = \[1,2,2,1\]
     nums2 = \[2,2\]
 
  ```python
