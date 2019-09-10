@@ -1,5 +1,9 @@
 # leetcode-note
 
+本份leetcode-note主要針對Top Interview Question所做的整理,
+
+從這些問題中整理出可能會使用到的python module, built-in function
+
 Topic
 ================
 *   [Python module Related](#pymodule)
