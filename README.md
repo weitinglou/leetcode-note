@@ -13,6 +13,7 @@ Topic
     *   [**Dict.get**](#dictget)
 *   [Math concept Related](#math)
     *   [**Sum**](#sum)
+    *   [**Recursive**](#recursive)
 ---------------------------------------
 <h2 id="pymodule">Python module</h2>
 <h3 id="collections">collections</h3>
@@ -203,4 +204,36 @@ class Solution(object):
         for i in nums:
             total = total - i
         return total
+```
+
+<h3 id="recursive">Recursive</h3>
+
+相關題型
+
+[21\. Merge Two Sorted Lists]
+
+ [21\. Merge Two Sorted Lists]: https://leetcode.com/problems/merge-two-sorted-lists/
+##### Descrption
+這題要將兩個排序過的list merge成一個排序過的list
+
+##### Solution
+這題使用遞迴的概念就可以解決,每次檢查兩個Node,回傳值比較小的Node,並且傳入下一個Node進行比對
+
+```python
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if l1 == None: return l2    #如果Node l1為空節點則直接回傳l2
+        if l2 == None: return l1    #如果Node l2為空節點則直接回傳l1
+        
+        if l1.val <= l2.val:    #如果l1節點的值小於l2節點的值就回傳l1,並且比較l1.next及l2節點哪個值較小
+            l1.next = self.mergeTwoLists(l1.next, l2)    
+            return l1
+        else:    #如果l2節點的值小於l1節點的值就回傳l2,並且比較l2.next及l1節點哪個值較小
+            l2.next = self.mergeTwoLists(l2.next, l1)
+            return l2
 ```
