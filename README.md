@@ -126,6 +126,35 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
         return cmp
  ```
  
+ [4\. Median of Two Sorted Arrays]
+
+ [4\. Median of Two Sorted Arrays]: https://leetcode.com/problems/median-of-two-sorted-arrays/
+ ##### Descrption
+ 給兩個已經排序好的list,找到這兩個list的中間數
+ 
+ ##### Solution
+ 把兩個list concat成一個後,使用sort built-in function 做排序,即可找到兩個list的中間數
+ 
+ ```python
+ class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """
+        ans = nums1 + nums2
+        ans = sorted(ans)
+        ans_num = 0.0
+        new_len = len(nums1) + len(nums2)
+
+        if new_len %2 == 1:
+            ans_num = ans[new_len/2]
+        else:
+            ans_num = (ans[new_len/2] + ans[(new_len/2) - 1])/2.0
+        return ans_num
+ ```
+ 
  <h3 id="dictget">Dict.get</h3>
  
  dict.get(key, default) 用在dictionary中,會返回指定key的value值,如果dictionary中沒有此key,則會返回default值
