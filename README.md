@@ -11,6 +11,7 @@ Topic
 *   [Python Built-in Related](#pybuiltin)
     *   [**Sort**](#sort)    
     *   [**Dict.get**](#dictget)
+    *   [**List.index**](#listindex)
 *   [Math concept Related](#math)
     *   [**Sum**](#sum)
     *   [**Recursive**](#recursive)
@@ -205,7 +206,20 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
                     count2[i] -=1
         return ans
  ```
+ <h3 id="listindex">List.index</h3>
  
+ index()方法返回obj出現在列表中最低位索引
+ 
+ eg,
+ aList = [123, 'xyz', 'zara', 'abc'];
+ aList.index( 'xyz' )  = 1
+ aList.index( 'zara' ) = 2
+ 
+ 相關題型
+ 
+ [3\. Longest Substring Without Repeating Characters]
+ 
+  [3\. Longest Substring Without Repeating Characters]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 ---------------------------------------
 <h2 id="math">Math Concept Related</h2>
 <h3 id="sum">Sum</h3>
