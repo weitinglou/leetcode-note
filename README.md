@@ -220,6 +220,30 @@ Python 內建有兩種可以做排序的function,分別是sort跟sorted,都可�
  [3\. Longest Substring Without Repeating Characters]
  
   [3\. Longest Substring Without Repeating Characters]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+  ##### Descrption
+ 給一個string s,找出最長沒有重複字元的子字串
+ 
+ ##### Solution
+ 這題主要概念為sliding window 配合List.index可解題
+ 
+ ```python
+ class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        substring = []
+        ans = 0
+        for x in s:
+            if x in substring:
+                substring = substring[substring.index(x)+1:]
+            
+            substring.append(x)
+            ans = max(ans, len(substring))
+            
+        return ans
+ ```
 ---------------------------------------
 <h2 id="math">Math Concept Related</h2>
 <h3 id="sum">Sum</h3>
